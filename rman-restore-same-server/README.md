@@ -382,6 +382,7 @@ FROM v$database;
 SELECT instance_name, status
 FROM v$instance;
 ```
+![Instance Status](screenshots/05_instance_status.png)
 
 ### Verify Datafile Locations
 
@@ -415,6 +416,7 @@ FROM v$controlfile;
 SELECT file#, name, status
 FROM v$tempfile;
 ```
+![Tempfile Locations](screenshots/07_tmpfile_location.png)
 
 ### Check Files Requiring Recovery
 
