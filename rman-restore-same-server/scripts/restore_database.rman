@@ -1,0 +1,40 @@
+
+# Oracle Database 19c
+# RMAN Same-Server Database Restore
+# Source Database: ORCL
+# Target Instance: TEST6
+
+# Prerequisites:
+# Verify ORACLE_SID is TEST6.
+# Start the target instance in NOMOUNT mode.
+# Verify backup availability and target file paths.
+# Confirm the intended recovery point.
+
+# Restore the control file
+
+RESTORE CONTROLFILE FROM
+'/data/RMAN/backup/control_c-1768855422-20261015-01';
+
+# Mount the database
+
+ALTER DATABASE MOUNT;
+
+# Catalog backup pieces
+
+CATALOG START WITH '/data/RMAN/backup/' NOPROMPT;
+
+# Verify available backups
+
+LIST BACKUP SUMMARY;
+LIST BACKUP OF ARCHIVELOG ALL;
+
+# Restore and recover datafiles
+
+RUN {
+    SET NEWNAME FOR DATABASE TO
+    '/u01/app/oracle/oradata/TEST6/%U';
+
+    RESTORE DATABASE;
+    SWITCH DATAFILE ALL;
+    RECOVER DATABASE;
+}
