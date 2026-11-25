@@ -371,9 +371,10 @@ the database name and DBID.
 ### Verify Database Status
 
 ```sql
-SELECT name, dbid, open_mode, log_mode
+SELECT name, open_mode, log_mode
 FROM v$database;
 ```
+![Database Status](screenshots/01_database_status.png)
 
 ### Verify Instance Status
 
@@ -389,6 +390,7 @@ SELECT file#, name
 FROM v$datafile
 ORDER BY file#;
 ```
+![Datafile Locations](screenshots/02_datafile_locations.png)
 
 ### Verify Redo Log Locations
 
@@ -397,6 +399,7 @@ SELECT group#, member
 FROM v$logfile
 ORDER BY group#;
 ```
+![Redo Log Locations](screenshots/03_redo_log_locations.png)
 
 ### Verify Control File Locations
 
@@ -404,6 +407,7 @@ ORDER BY group#;
 SELECT name
 FROM v$controlfile;
 ```
+![Control File Locations](screenshots/04_controlfile_locations.png)
 
 ### Verify Tempfile Locations
 
@@ -418,6 +422,7 @@ FROM v$tempfile;
 SELECT file#, error, change#, time
 FROM v$recover_file;
 ```
+![Recovery Verification](screenshots/06_recovery_verification.png)
 
 ### Expected Verification Results
 
