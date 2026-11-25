@@ -254,16 +254,7 @@ refer to the related practical:
   errors during database restoration.
 - Capturing execution logs is important for database troubleshooting.
 
-## 12. Safety Considerations
-
-- Perform failure scenarios only in an isolated lab environment.
-- Verify the target ORACLE_SID before executing commands.
-- Ensure that target database file paths do not conflict with
-  the source database.
-- Never delete source database files to reproduce this scenario.
-- Investigate the root cause before retrying failed operations.
-
-## 13. Lab Conclusion
+## 12. Lab Conclusion
 
 The TEST7 practical demonstrated that CREATE CONTROLFILE
 cannot successfully reconstruct the control file when the
@@ -277,7 +268,7 @@ control file backup provides an alternative recovery approach
 that does not require the physical datafiles to be present
 at the control file restoration stage.
 
-## 14. References
+## 13. References
 
 - [Oracle 19c - CREATE CONTROLFILE](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/CREATE-CONTROLFILE.html)
 - [Oracle 19c - ALTER DATABASE](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ALTER-DATABASE.html)
